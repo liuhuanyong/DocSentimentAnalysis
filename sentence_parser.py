@@ -73,15 +73,3 @@ class LtpParser():
             child_dict_list.append([word, postags[index], index, child_dict])
         return child_dict_list
 
-
-def test():
-    handler = LtpParser()
-    sentence = '李克强总理今天来我家了,我感到非常荣幸'
-    words = list(jieba.cut(sentence))
-    postags = handler.get_postag(words)
-    dep_tuples = handler.syntax_parser(words, postags)
-    dep_dict = handler.parser_dict(words, postags, dep_tuples)
-    for dep in dep_dict:
-        print(dep)
-
-# test()
